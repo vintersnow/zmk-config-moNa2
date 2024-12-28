@@ -51,7 +51,7 @@
 &kp Q        &kp W           &lt 5 E         &lt 5 R           &kp T                                      &kp Y        &kp U              &lt 5 I         &kp O           &kp P
 &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_WIN D  &mt LEFT_SHIFT F  &kp G        &trans         &kp MINUS      &kp H        &mt RIGHT_SHIFT J  &mt LEFT_WIN K  &mt LEFT_ALT L  &mt RCTRL SEMICOLON
 &kp Z        &kp X           &kp C           &kp V             &kp B        &lt 4 COLON    &kp SEMICOLON  &kp N        &kp M              &kp COMMA       &kp DOT         &kp SLASH
-&kp LCTRL    &kp LEFT_WIN    &kp LEFT_ALT    &sk LEFT_SHIFT    &lt 1 SPACE  &lt 2 ESC      &kp BACKSPACE  &lt 1 ENTER                                                     &lt 4 A
+&kp LCTRL    &kp LEFT_WIN    &kp LEFT_ALT    &sk LEFT_SHIFT    &lt 1 SPACE  &lt 2 ESC      &kp BACKSPACE  &lt 2 ENTER                                                     &lt 4 A
             >;
 
             sensor-bindings =
