@@ -43,6 +43,11 @@
         };
     };
 
+    &mt {
+      tapping-term-ms = <1000>;
+      quick-tap-ms = <200>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
