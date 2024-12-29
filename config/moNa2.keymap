@@ -104,6 +104,17 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans        &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp NUMBER_5  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans  &trans    &trans  &trans                          &trans
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
         MOUSE {
             bindings = <
 &trans          &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans
