@@ -9,7 +9,8 @@
 
 &mt {
     flavor = "balanced";
-    quick-tap-ms = <0>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <50>;
 };
 
 / {
@@ -41,11 +42,6 @@
 
             tap-ms = <20>;
         };
-    };
-
-    &mt {
-      tapping-term-ms = <1000>;
-      quick-tap-ms = <200>;
     };
 
     keymap {
