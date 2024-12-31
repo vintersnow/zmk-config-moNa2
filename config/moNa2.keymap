@@ -44,12 +44,12 @@
         };
 
         tp_repeat_mo1: tp_repeat_mo1 {
-          compatible = "zmk,behavior-hold-tap";
-          label = "TP_REPEAT_MO1";
-          #binding-cells = <2>;
-          tapping-term-ms = <200>;
-          quick-tap-ms = <100>;
-          bindings = <&mo>, <&key_repeat>;
+            compatible = "zmk,behavior-hold-tap";
+            label = "TP_REPEAT_MO1";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            bindings = <&mo>, <&key_repeat>;
         };
     };
 
@@ -72,9 +72,9 @@
         layer_1 {
             bindings = <
 &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                    &kp LS(NUMBER_6)   &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)
-&kp LCTRL         &mkp MB2          &mkp MB3          &mkp MB1          &trans            &trans    &trans  &kp LEFT           &kp DOWN          &kp UP            &kp RIGHT         &kp RIGHT_SHIFT
-&kp LEFT_SHIFT    &trans            &mkp MB4          &mkp MB5          &trans            &trans    &trans  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE   &kp BACKSLASH
-&trans            &trans            &trans            &trans            &trans            &trans    &trans  &trans                                                                   &trans
+&kp EQUAL         &trans            &kp MINUS         &kp SQT           &kp GRAVE         &trans    &trans  &kp LEFT           &kp DOWN          &kp UP            &kp RIGHT         &kp LS(SEMICOLON)
+&kp LS(EQUAL)     &trans            &kp LS(MINUS)     &kp LS(SQT)       &kp LS(GRAVE)     &trans    &trans  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE   &kp BACKSLASH
+&trans            &trans            &trans            &trans            &trans            &trans    &trans  &trans                                                                   &kp LS(BACKSLASH)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -82,10 +82,10 @@
 
         layer_2 {
             bindings = <
-&kp KP_NUMBER_0             &kp KP_NUMBER_1  &kp KP_NUMBER_2           &kp KP_NUMBER_3             &kp PLUS                                       &trans          &kp LS(SEMICOLON)  &kp LS(SQT)  &kp LS(MINUS)  &trans
-&mt RCTRL EQUAL             &kp KP_NUMBER_4  &mt LEFT_WIN KP_NUMBER_5  &mt LEFT_SHIFT KP_NUMBER_6  &kp MINUS   &kp LC(LA(KP_NUMBER_0))    &trans  &kp UNDERSCORE  &kp TAB            &kp SQT      &kp MINUS      &kp LS(SEMICOLON)
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_7  &kp KP_NUMBER_8           &kp KP_NUMBER_9             &kp PERIOD  &kp EQUAL                  &trans  &trans          &kp GRAVE          &kp TILDE    &trans         &kp LS(BACKSLASH)
-&trans                      &trans           &trans                    &trans                      &trans      &trans                     &trans  &trans                                                         &kp PIPE
+&kp NUMBER_0             &kp NUMBER_1  &kp NUMBER_2           &kp NUMBER_3             &kp PLUS                                       &trans          &trans   &trans        &trans           &trans
+&mt RCTRL EQUAL          &kp NUMBER_4  &mt LEFT_WIN NUMBER_5  &mt LEFT_SHIFT NUMBER_6  &kp MINUS   &kp LC(LA(KP_NUMBER_0))    &trans  &kp LEFT_ARROW  &kp TAB  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
+&mt LEFT_SHIFT NUMBER_0  &kp NUMBER_7  &kp NUMBER_8           &kp NUMBER_9             &kp PERIOD  &kp EQUAL                  &trans  &trans          &trans   &trans        &trans           &kp LS(BACKSLASH)
+&trans                   &trans        &trans                 &trans                   &trans      &trans                     &trans  &trans                                                  &kp PIPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
