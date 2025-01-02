@@ -65,7 +65,7 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W           &lt 5 E         &lt 5 R           &kp T                                      &kp Y        &kp U              &lt 5 I         &kp O           &kp P
+&lt 3 Q      &kp W           &lt 5 E         &lt 5 R           &kp T                                      &kp Y        &kp U              &lt 5 I         &kp O           &kp P
 &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_WIN D  &mt LEFT_SHIFT F  &kp G        &trans         &kp MINUS      &kp H        &mt RIGHT_SHIFT J  &mt LEFT_WIN K  &mt LEFT_ALT L  &mt RCTRL SEMICOLON
 &kp Z        &kp X           &kp C           &kp V             &kp B        &lt 4 COLON    &kp SEMICOLON  &kp N        &kp M              &kp COMMA       &kp DOT         &kp SLASH
 &mkp MB1     &kp LEFT_WIN    &kp LEFT_ALT    &sk LEFT_SHIFT    &lt 1 SPACE  &lt 2 ESC      &kp BACKSPACE  &lt 2 ENTER                                                     &mo 4
@@ -78,10 +78,10 @@
 
         layer_1 {
             bindings = <
-&kp EXCLAMATION  &kp AT_SIGN   &kp PLUS    &kp PERCENT  &kp TILDE                    &trans          &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&mo 3            &kp ASTERISK  &kp MINUS   &kp COLON    &kp GRAVE  &trans    &trans  &kp UNDERSCORE  &kp SINGLE_QUOTE   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
-&trans           &kp HASH      &kp DOLLAR  &trans       &trans     &trans    &trans  &kp CARET       &kp AMPERSAND      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH
-&trans           &trans        &trans      &trans       &trans     &trans    &trans  &trans                                                                          &kp LS(BACKSLASH)
+&kp EXCLAMATION  &kp AT_SIGN   &kp PLUS  &kp PERCENT  &kp TILDE                    &trans          &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&mo 3            &kp ASTERISK  &kp HASH  &kp MINUS    &kp GRAVE  &trans    &trans  &kp UNDERSCORE  &kp SINGLE_QUOTE   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
+&trans           &kp DOLLAR    &trans    &trans       &trans     &trans    &trans  &kp CARET       &kp AMPERSAND      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH
+&trans           &trans        &trans    &trans       &trans     &trans    &trans  &trans                                                                          &kp LS(BACKSLASH)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
