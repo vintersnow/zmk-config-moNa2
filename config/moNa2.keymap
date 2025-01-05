@@ -71,7 +71,7 @@
           quick-tap-ms = <HML_QUICK_TAP>;
           require-prior-idle-ms = <HML_REQUIRE_IDLE>;
           bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <KEYS_R THUMBS>
+          hold-trigger-key-positions = <KEYS_R THUMBS>;
           hold-trigger-on-release;
         };
 
@@ -83,7 +83,7 @@
           require-prior-idle-ms = <HML_REQUIRE_IDLE>;
           quick-tap-ms = <HML_QUICK_TAP>;
           bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <KEYS_L THUMBS>
+          hold-trigger-key-positions = <KEYS_L THUMBS>;
           hold-trigger-on-release;
         };
     };
