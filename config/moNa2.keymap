@@ -10,6 +10,7 @@
 
 #define HML_TAPPING_TERM 300
 #define HML_QUICK_TAP 200
+#define HML_REQUIRE_IDLE 150
 
 &mt {
     flavor = "balanced";
@@ -69,6 +70,7 @@
           flavor = "balanced";
           tapping-term-ms = <HML_TAPPING_TERM>;
           quick-tap-ms = <HML_QUICK_TAP>;
+          require-prior-idle-ms = <HML_REQUIRE_IDLE>;
           bindings = <&kp>, <&kp>;
           hold-trigger-key-positions = <KEYS_R THUMBS>
           hold-trigger-on-release;
@@ -79,6 +81,7 @@
           #binding-cells = <2>;
           flavor = "balanced";
           tapping-term-ms = <HML_TAPPING_TERM>;
+          require-prior-idle-ms = <HML_REQUIRE_IDLE>;
           quick-tap-ms = <HML_QUICK_TAP>;
           bindings = <&kp>, <&kp>;
           hold-trigger-key-positions = <KEYS_L THUMBS>
