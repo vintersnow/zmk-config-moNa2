@@ -141,9 +141,9 @@
 
         layer_4 {
             bindings = <
-&trans          &trans    &mo 5     &mo 5     &trans                               &trans  &trans    &trans    &trans    &trans
+&trans          &trans    &mo 5     &mo 5     &trans                               &trans  &mo 5     &trans    &trans    &trans
 &kp LCTRL       &mkp MB2  &mkp MB3  &mkp MB1  &trans  &kp NUMBER_4    &trans       &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&kp LEFT_SHIFT  &trans    &mkp MB4  &mkp MB5  &trans  &kp NUMBER_4    &bootloader  &trans  &trans    &trans    &trans    &trans
+&kp LEFT_SHIFT  &trans    &mkp MB4  &mkp MB5  &trans  &kp NUMBER_4    &bootloader  &trans  &mkp MB4  &mkp MB5  &trans    &trans
 &trans          &trans    &trans    &trans    &trans  &trans          &trans       &trans                                &trans
             >;
 
