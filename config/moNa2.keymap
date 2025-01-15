@@ -6,11 +6,14 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 6
+#define HML_TAPPING_TERM 300
+#define HML_QUICK_TAP 200
+#define HML_REQUIRE_IDLE 150
 
 &mt {
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick-tap-ms = <100>;
+    quick-tap-ms = <200>;
 };
 
 / {
@@ -58,6 +61,32 @@
             quick-tap-ms = <100>;
             bindings = <&mo>, <&key_repeat>;
         };
+
+        hml: positional_hold_tap_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HML_TAPPING_TERM>;
+            quick-tap-ms = <HML_QUICK_TAP>;
+            require-prior-idle-ms = <HML_REQUIRE_IDLE>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        hmr: positional_hold_tap_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HML_TAPPING_TERM>;
+            require-prior-idle-ms = <HML_REQUIRE_IDLE>;
+            quick-tap-ms = <HML_QUICK_TAP>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
     };
 
     keymap {
@@ -65,10 +94,10 @@
 
         default_layer {
             bindings = <
-&lt 3 Q      &kp W           &lt 5 E         &lt 5 R           &kp T                                      &kp Y        &kp U              &lt 5 I         &kp O           &kp P
-&mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_WIN D  &mt LEFT_SHIFT F  &kp G        &trans         &kp MINUS      &kp H        &mt RIGHT_SHIFT J  &mt LEFT_WIN K  &mt LEFT_ALT L  &mt RCTRL SEMICOLON
-&kp Z        &kp X           &kp C           &kp V             &kp B        &lt 4 COLON    &kp SEMICOLON  &kp N        &kp M              &kp COMMA       &kp DOT         &kp SLASH
-&mkp MB1     &kp LEFT_WIN    &kp LEFT_ALT    &sk LEFT_SHIFT    &lt 1 SPACE  &lt 2 ESC      &kp BACKSPACE  &lt 2 ENTER                                                     &mo 4
+&lt 3 Q       &kp W            &lt 5 E          &lt 5 R            &kp T                                      &kp Y        &kp U               &lt 5 I          &kp O            &kp P
+&hml LCTRL A  &hml LEFT_ALT S  &hml LEFT_WIN D  &hml LEFT_SHIFT F  &kp G        &trans         &kp MINUS      &kp H        &hmr RIGHT_SHIFT J  &hmr LEFT_WIN K  &hmr LEFT_ALT L  &hmr RCTRL SEMICOLON
+&lt 3 Z       &kp X            &kp C            &kp V              &kp B        &lt 4 COLON    &kp SEMICOLON  &kp N        &kp M               &kp COMMA        &kp DOT          &kp SLASH
+&mkp MB1      &kp LEFT_WIN     &kp LEFT_ALT     &sk LEFT_SHIFT     &lt 1 SPACE  &lt 4 ESC      &kp BACKSPACE  &lt 2 ENTER                                                        &mo 6
             >;
 
             sensor-bindings =
@@ -89,10 +118,10 @@
 
         layer_2 {
             bindings = <
-&kp NUMBER_0             &kp NUMBER_4  &kp NUMBER_5           &kp NUMBER_6             &kp PLUS                         &trans          &trans   &trans        &trans           &trans
-&mt RCTRL EQUAL          &kp NUMBER_1  &mt LEFT_WIN NUMBER_2  &mt LEFT_SHIFT NUMBER_3  &kp MINUS   &trans       &trans  &kp LEFT_ARROW  &kp TAB  &kp UP_ARROW  &kp RIGHT_ARROW  &kp COLON
-&mt LEFT_SHIFT NUMBER_0  &kp NUMBER_7  &kp NUMBER_8           &kp NUMBER_9             &kp PERIOD  &kp EQUAL    &trans  &trans          &trans   &trans        &trans           &kp LS(BACKSLASH)
-&trans                   &trans        &trans                 &trans                   &trans      &trans       &trans  &trans                                                  &kp PIPE
+&kp NUMBER_0             &kp NUMBER_4  &kp NUMBER_5           &kp NUMBER_6             &kp PLUS                         &trans          &trans          &trans        &trans           &trans
+&mt RCTRL EQUAL          &kp NUMBER_1  &mt LEFT_WIN NUMBER_2  &mt LEFT_SHIFT NUMBER_3  &kp MINUS   &trans       &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp COLON
+&mt LEFT_SHIFT NUMBER_0  &kp NUMBER_7  &kp NUMBER_8           &kp NUMBER_9             &kp PERIOD  &kp EQUAL    &trans  &trans          &trans          &trans        &trans           &kp LS(BACKSLASH)
+&trans                   &trans        &trans                 &trans                   &trans      &trans       &trans  &trans                                                         &kp PIPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -111,10 +140,10 @@
 
         layer_4 {
             bindings = <
-&trans          &trans    &mo 5     &mo 5     &trans                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp LCTRL       &mkp MB2  &mkp MB3  &mkp MB1  &trans  &kp NUMBER_4    &trans       &trans        &mkp MB1      &mkp MB3      &mkp MB2      &trans
-&kp LEFT_SHIFT  &trans    &mkp MB4  &mkp MB5  &trans  &kp NUMBER_4    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans          &trans    &trans    &trans    &trans  &trans          &trans       &trans                                                  &bt BT_CLR_ALL
+&trans          &trans    &mo 5     &mo 5     &trans                               &trans  &mo 5     &trans    &trans    &trans
+&kp LCTRL       &mkp MB2  &mkp MB3  &mkp MB1  &trans  &kp NUMBER_4    &trans       &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&kp LEFT_SHIFT  &trans    &mkp MB4  &mkp MB5  &trans  &kp NUMBER_4    &bootloader  &trans  &mkp MB4  &mkp MB5  &trans    &trans
+&trans          &trans    &trans    &trans    &trans  &trans          &trans       &trans                                &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -133,10 +162,10 @@
 
         MOUSE {
             bindings = <
-&trans          &trans    &lt_to_layer_0 5 A  &mo 5     &trans                    &trans  &trans    &trans    &trans    &trans
-&kp LCTRL       &mkp MB2  &mkp MB3            &mkp MB1  &trans  &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&kp LEFT_SHIFT  &trans    &mkp MB4            &mkp MB5  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans          &trans    &trans              &trans    &trans  &trans    &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                  &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
